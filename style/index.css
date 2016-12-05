@@ -1,0 +1,245 @@
+@font-face {
+    font-family: "glyphicons";
+    src:url(../fonts/glyphicons-halflings-regular.ttf);
+}
+body{
+    font-family: 微软雅黑, serif,glyphicons;
+    color: #444;
+    background-color: #F1F2F3;
+    font-size: 0.65em;
+}
+body,input,ul,li,a,img{
+    padding: 0;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration:none;
+    color: #444444;
+}
+a:hover{
+    text-decoration: underline;
+}
+header{
+    width: 100vw;
+    height: 80px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #D4D5D6;
+    box-shadow: 0 0 10px 5px #ECEDEE;
+
+}
+.logo{
+    width: 99px;
+    height: 45px;
+    background-image: url(../images/sprite.png);
+}
+header .inner{
+    width: 80vw;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+.category-filter{
+    width: 87px;
+    height: 34px;
+    border: 1px solid #E1E1E1;
+    border-radius: 4px;
+    margin-left: 1.2vw;
+    text-align: center;
+    /*word-spacing: 1.2em;*/
+    line-height: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /*transition: height 0.3s;*/
+}
+.category-filter .cover{
+    width: 88px;
+    height: 51px;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    background-color: #FFFFFF;
+    top: 0;
+    left: -1px;
+    border-left: 1px solid #E1E1E1;
+    border-right: 1px solid #E1E1E1;
+    transition: visibility 0.3s;
+}
+.category-filter div{
+    float: left;
+}
+.category-filter .title{
+    font-size: 1.6em;
+    position: relative;
+    z-index: 2;
+}
+.category-filter .icon:before{
+    content: '\e114';
+
+}
+.category-filter .icon{
+    transition: transform 0.3s;
+    margin-left: 0.5vw;
+    line-height: 35px;
+    height: 30px;
+    position: relative;
+    z-index: 2;
+}
+.category-filter:hover .icon{
+    transform: rotate(-180deg);
+}
+.category-filter .categories{
+    width: 488px;
+    background-color: #ffffff;
+    height: 350px;
+    position: absolute;
+    top: 50px;
+    left:-1px;
+    border:1px solid #E1E1E1;
+    display: flex;
+    visibility: hidden;
+    transition: visibility 0.3s, height 0.3s;
+}
+.category-filter:hover{
+    height: 56px;
+    align-self: flex-end;
+    border-bottom: none;
+}
+.category-filter:hover .cover{
+    visibility: visible;
+}
+.category-filter:hover .categories{
+    visibility: visible;
+}
+.category-filter .categories .inner{
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    /*background-color: red;*/
+    display: flex;
+
+}
+
+.category-filter .categories .inner .first-menu{
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid #E1E1E1;
+}
+.category-filter .categories .inner .first-menu a{
+    display: block;
+    text-align: left;
+}
+.first-menu-3{
+    margin-top: 12px;
+}
+.category-filter .categories .inner .secondary-menu{
+    width:80%;
+    height: 100%;
+}
+.secondary-menu>div{
+    width: 93%;
+    height: 44px;
+    border-bottom: 1px dashed #E1E1E1;
+    float: right;
+    display: flex;
+    line-height: 1;
+    align-items: center;
+
+}
+.secondary-menu>div a:last-child{
+    border: none;
+}
+.secondary-menu>div:first-child{
+    margin-top: -15px;
+}
+.secondary-menu>div:last-child{
+    border: none;
+}
+.secondary-menu>div a{
+    padding: 3px 20px;
+    border-right: 1px solid #E1E1E1;
+    height: 18px;
+    display: block;
+}
+.search-container{
+    width: 25vw;
+    height: 45%;
+    border: 1px solid #c5c5c5;
+    margin-left: 5vw;
+    display: flex;
+    align-items: center;
+}
+.search-container span:before{
+    content: '\e003';
+}
+.search-container input{
+    border: none;
+    padding-left:3px;
+    width: 93%;
+}
+.search-container input:focus{
+    outline: none;
+
+}
+.orient-center{
+    width: 80vw;
+    height: 100%;
+    margin: auto;
+}
+.banner{
+    margin-top: 50px;
+}
+.carousel{
+    width: 710px;
+    height: 443px;
+    overflow: hidden;
+}
+.carousel .image-wrapper{
+    width: 4000px;
+    height: 100%;
+    animation: carousel 10s infinite;
+}
+.carousel .image-wrapper img{
+    display: block;
+    float: left;
+}
+@keyframes carousel{
+    0%{
+        transform: translate(0,0);
+    }
+    10%{
+        transform: translate(0,0);
+    }
+    20%{
+        transform: translate(-710px,0);
+    }
+    30%{
+        transform: translate(-710px,0);
+    }
+    40%{
+        transform: translate(-1420px,0);
+    }
+    50%{
+        transform: translate(-1420px,0);
+    }
+    60%{
+        transform: translate(-2130px,0);
+    }
+    70%{
+        transform: translate(-2130px,0);
+    }
+    80%{
+        transform: translate(-2840px,0);
+    }
+    90%{
+        transform: translate(-2840px,0);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}

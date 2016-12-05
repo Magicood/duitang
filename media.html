@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>媒体查询</title>
+    <style>
+
+        .container{
+            width: 100vw;
+            height: 60vh;
+            background-color: #000;
+            padding:1px;
+            /*border:1px solid transparent;*/
+            /*float: left;*/
+        }
+        body{
+            padding:0;
+            margin:0;
+            color: #fff;
+        }
+        a{
+            color: #fff;
+        }
+        li{
+            list-style: none;
+        }
+        @font-face {
+            font-family: "glyphicons";
+            src: url(../fonts/glyphicons-halflings-regular.ttf);
+        }
+        @media screen and (min-width: 1001px){
+            .container{
+                background-color: deepskyblue;
+            }
+            .container li:before{
+                content:"\2709";
+                color: blue;
+            }
+            .container li a:before{
+                content:attr(data-email);
+            }
+        }
+        @media all and (min-width: 800px) and (max-width: 1001px) {
+            .container{
+                background-color: navy;
+            }
+            .container li:before{
+                content:attr(data-email);
+                color: blue;
+            }
+        }
+        @media all and (min-width: 400px) and (max-width: 800px) {
+            .container{
+                background-color: darkcyan;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>改变浏览器窗口大小，查看效果</h1>
+    <ul>
+        <li data-email="方式发大水范德萨发的">
+            <a href="mailto:johndoe@example.com"  >John doe</a>
+        </li>
+        <li>
+            <a href="mailto:david@example.com"  data-email="方式发大水范德萨发的">David</a>
+        </li>
+        <li>
+            <a href="mailto:paubo@example.com"  data-email="方式发大水范德萨发的">Paubo</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
