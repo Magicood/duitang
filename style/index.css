@@ -80,7 +80,6 @@ header .inner{
 }
 .category-filter .icon:before{
     content: '\e114';
-
 }
 .category-filter .icon{
     transition: transform 0.3s;

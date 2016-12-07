@@ -1,0 +1,341 @@
+@font-face {
+    font-family:"glyphicons";
+    src:url("../../fonts/glyphicons-halflings-regular.ttf");
+}
+body{
+    padding:0;
+    margin:0;
+    font-family: 微软雅黑,serif,glyphicons;
+    font-size: 1.6vw;
+}
+*{
+    box-sizing: border-box;
+}
+.container{
+    display: none;
+}
+.header{
+    width: 100vw;
+    height: 30vh;
+    display: block;
+    position: relative;
+}
+.put{
+    position: absolute;
+    margin: 1vw auto 0 auto;
+    left: 12vw;
+    width: 70vw;
+    height: 5vh;
+    background-color: rgba(255,255,255,0.7);
+    border: 1px solid #000000;
+    border-radius: 10vw;
+}
+.header input{
+    display: block;
+    margin: 0.6vw auto 0 2vw;
+    width: 20vw;
+    height: 5vw;
+    float: left;
+    background: none;
+    border: none;
+}
+.put>img{
+    display: block;
+    width: 5vw;
+    height: 4vw;
+    float: left;
+    margin-top: 1vw;
+    margin-left: 2vw;
+}
+.header>img:first-child{
+    width: 100vw;
+    height: 5vh;
+}
+.header>img:last-child{
+    width: 100vw;
+    height: 25vh;
+}
+.banner{
+    width: 100vw;
+    height: 65vh;
+    margin: 0 auto;
+    /*justify-content: center;*/
+    float: left;
+    display: block;
+}
+.banner .inner{
+    width: 99vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1vw auto 0 auto;
+    flex-flow: row wrap;
+    float: left;
+}
+.box-2-1{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #6B00BB;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-1 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-1:before{
+    content:'\e008';
+}
+.box-2-2{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #A66800;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-2 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-2:before{
+    content:'\e008';
+}
+.box-2-3{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #417A62;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-3 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-3:before{
+    content:'\e008';
+}
+.box-2-4{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #00A69D;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-4 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-4:before{
+    content:'\e008';
+}
+.box-2-5{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #0086A8;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-5 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-5:before{
+    content:'\e008';
+}
+.box-2-6{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #6B00BB;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-6 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-6:before{
+    content:'\e008';
+}
+.box-2-7{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #BB006B;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-7 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-7:before{
+    content:'\e008';
+}
+.box-2-8{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #779902;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-8 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-8:before{
+    content:'\e008';
+}
+.box-2-9{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #0113BA;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-9 span {
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-9:before{
+    content:'\e008';
+}
+.box-2-10{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #417A62;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-10 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-10:before{
+    content:'\e008';
+}
+.box-2-11{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #417A62;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-11 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-11:before{
+    content:'\e008';
+}
+.box-2-12{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #417A62;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-12 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-12:before{
+    content:'\e008';
+}
+.box-2-13{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #417A62;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-13 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-13:before{
+    content:'\e008';
+}
+.box-2-14{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #417A62;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-14 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-14:before{
+    content:'\e008';
+}
+.box-2-15{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #417A62;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-15 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-15:before{
+    content:'\e008';
+}
+.box-2-16{
+    width: 32.5vw;
+    height: 10vh;
+    background-color: #417A62;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: glyphicons;
+}
+.box-2-16 span{
+    display: block;
+    margin: 1vw auto 2vw auto;
+}
+.box-2-16:before{
+    content:'\e008';
+}
+.footer1{
+    width: 100vw;
+    height: 5vw;
+    position: absolute;
+    bottom:0;
+}
+.footer1>img{
+    width: 100vw;
+    height: 5vw;
+}

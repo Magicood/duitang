@@ -3,60 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" media="screen and (min-width:480px)"
+          href="style/media/mobile.css">
+    <link rel="stylesheet" media="screen and (min-width:800px)"
+          href="style/media/tablet.css">
+    <link rel="stylesheet" media="screen and (min-width:1000px)"
+          href="style/media/PC.css">
     <title>媒体查询</title>
-    <style>
-
-        .container{
-            width: 100vw;
-            height: 60vh;
-            background-color: #000;
-            padding:1px;
-            /*border:1px solid transparent;*/
-            /*float: left;*/
-        }
-        body{
-            padding:0;
-            margin:0;
-            color: #fff;
-        }
-        a{
-            color: #fff;
-        }
-        li{
-            list-style: none;
-        }
-        @font-face {
-            font-family: "glyphicons";
-            src: url(../fonts/glyphicons-halflings-regular.ttf);
-        }
-        @media screen and (min-width: 1001px){
-            .container{
-                background-color: deepskyblue;
-            }
-            .container li:before{
-                content:"\2709";
-                color: blue;
-            }
-            .container li a:before{
-                content:attr(data-email);
-            }
-        }
-        @media all and (min-width: 800px) and (max-width: 1001px) {
-            .container{
-                background-color: navy;
-            }
-            .container li:before{
-                content:attr(data-email);
-                color: blue;
-            }
-        }
-        @media all and (min-width: 400px) and (max-width: 800px) {
-            .container{
-                background-color: darkcyan;
-            }
-        }
-
-    </style>
 </head>
 <body>
 <div class="container">

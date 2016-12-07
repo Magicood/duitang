@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for</title>
+</head>
+<body>
+
+<script>
+    document.write("<h1>for循环语法练习</h1>");
+    for(var i=0;i<10;i++){
+            document.write("&nbsp;*");
+        }
+    document.write("<h1>for循环嵌套</h1>");
+    for( i=0;i<10;i++){
+        for(var j=0;j<10;j++) {
+            document.write("&nbsp;*");
+        }
+        document.write("<br>");
+    }
+    document.write("<h1>for循环半金字塔</h1>");
+    for( i=0;i<10;i++){
+        for( j=0;j<=i;j++) {
+            document.write("&nbsp;*");
+        }
+        document.write("<br>");
+    }
+    document.write("<h1>for循环半金字塔2</h1>");
+    for( i=10;i>0;i--){
+        for( j=0;j<i;j++) {
+            document.write("&nbsp;*");
+        }
+        document.write("<br>");
+    }
+    document.write("<h1>for循环全金字塔2</h1>");
+   for(i=0;i<10;i++){
+       for(j=10;j>i;j--){
+           document.write("&nbsp;");
+       }
+       for(var k=0;k<i*2-1;k++){
+           document.write(" *");
+       }
+       document.write("<br>");
+   }
+    document.write("<h1>for循环全倒金字塔2</h1>");
+    for(i=0;i<11;i++){
+        for(k=0;k<i;k++){
+        document.write("&nbsp; ");
+         }
+        for(j=10;j>i*2-1;j--){
+            document.write("&nbsp;*");
+        }
+        document.write("<br>");
+    }
+    document.write("<h1>冒泡排序</h1>");
+    var a=['D','G','A','E','H','B','C','F'];
+    var temp;
+    for(i=0;i<a.length;i++) {
+        for (j = i+1; j < a.length; j++) {
+            if (a[i] < a[j]) {
+                temp = a[j];
+                a[j] = a[i];
+                a[i] = temp;
+            }
+        }
+    }
+    document.write(a);
+</script>
+</body>
+</html>
