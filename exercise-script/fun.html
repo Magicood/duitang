@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function invokeHandel() {
+        console.log("函数被函数调用");
+    }
+    function  loaded(prameter) {
+//        alert('你好啊');
+        invokeHandel();
+        prameter();
+    }
+    loaded(invokeHandel);
+
+
+    document.write("<h1>arguments</h1>");
+    function multiPar() {
+        var p1 = arguments[0];
+        var p2 = arguments[1];
+        var p3 = arguments[2];
+        var p4 = arguments[3];
+        document.write(p1);
+        document.write(p2);
+        document.write(p3);
+        document.write(p4);
+    }
+    multiPar(1,2,3,4);
+
+    document.write("<h1>setTimeout</h1>");
+    var i=0;
+    function outputMsg() {
+        document.write("<br>");
+        document.write(i);
+        i++;
+        if (i < 8) {
+            setTimeout(outputMsg, 300);
+        }
+    }
+    outputMsg();
+</script>
+</body>
+</html>

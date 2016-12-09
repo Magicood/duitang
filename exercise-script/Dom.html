@@ -2,9 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Dom操作</title>
+    <style>
+        body{
+            color:#dddddd;
+        }
+    </style>
 </head>
 <body>
 
+<div id="container">
+    <div id="child">
+        <div id="grandSon"></div>
+    </div>
+    <div id="child2">
+    </div>
+    <div class="container" style="width:800px;height: 1000px;background-color: #fd3429">
+        <div class="inner">1</div>
+        <div class="inner">2</div>
+        <div class="inner">3</div>
+        <div class="inner">4</div>
+    </div>
+</div>
+<script>
+    function output(msg) {
+        document.write("<br>");
+        document.write("<h1>"+msg+"</h1>");
+    }
+    var classContainer = document.getElementsByClassName("container");
+    var container0=classContainer[0];
+
+
+//    var divElement = document.createElement("h1");
+//
+//    divElement.innerText="5";
+//
+//    container0.appendChild(divElement);
+//
+//    container0.innerHTML = container0.innerHTML+"<div>6</div>";
+
+
+
+
+    var children = container0.children;
+    output(children.length);
+    var childNodes= container0.childNodes;
+    output(childNodes.length);
+
+    var parenode = container0.parentNode;
+    output("container 的父节点是"+parenode.innerText);
+
+    var Child=container0.childNodes;
+    output(Child[1].innerText);
+
+    var firstChild = container0.firstChild;
+    output("container 的第一个孩子是"+firstChild.nodeValue);
+
+    var lastChild =container0.lastChild;
+    output("container 的最后一个孩子是"+lastChild.nodeValue);
+
+    var sib =Child[1].previousSibling;
+    output(sib.length);
+
+    /**
+     * childNodes不包括孙子节点，只能选择儿子
+     * @type {Element}
+     */
+    var container = document.getElementById("container");
+    container.style.width="500px";
+    container.style.height="200px";
+    container.style.backgroundColor="rgba(204,226,0,1)";
+    var node=container.childNodes;
+    var cElem = document.getElementById("child");
+    var pElem = cElem.parentNode;
+
+    function showName(title,title1,title2) {
+        var s = "大家好，我叫";
+        var s1="，字"+title1;
+        var s2="，号。"+title2;
+        console.log(s+title+s1+s2);
+    }
+    showName("思聪","小思思","国民");
+    showName("腾讯","阿里巴巴","阿里巴巴");
+    showName("百度","阿里巴巴","阿里巴巴");
+</script>
 </body>
 </html>
