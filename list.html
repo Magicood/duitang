@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无序列表</title>
+    <style>
+        li{
+            width:700px;
+            height: 35px;
+            border-bottom: 1px solid #333333;
+            line-height:35px;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li id="editable"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<script>
+    var flag = false;
+    var editable = document.getElementById("editable");
+    editable.addEventListener("click",function () {
+        if(flag){
+
+        }else{
+            var input = document.createElement("input");
+            editable.appendChild(input);
+            input.addBehavior()EventListener("keyup",function (e) {
+                if(e.keyCode==13){
+                    input.style.visibility = "hidden";
+                    editable.innerText=input.value;
+                }
+            });
+            flag = true;
+        }
+
+    })
+</script>
+</body>
+</html>

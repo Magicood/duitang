@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+        var eventHandles = {
+
+        addEventListener:function (key,handle) {
+            if(typeof eventHandles[key]=="undefined") {
+                eventHandles[key] = [];
+            }
+            eventHandles[key].push(handle);         //在eventHandles[key]中添加函数
+        },
+        dispatcher:function (key) {
+            var l = eventHandles[key].length;
+            for(var i=0;i<l;i++){
+                eventHandles[key][i]();         //eventHandles[key][i]为数组的一个元素，可以是一个函数
+            }
+        },
+        default:"default"
+    };
+    eventHandles.title = "I'm title!";
+    eventHandles["zh-title"]="中文标题";
+    console.log(eventHandles["zh-title"]);
+
+
+
+
+
+
+
+
+
+
+//    var waterBoilHandle=[];
+
+    function  makeWater() {
+        for(var i=0;i<100;i++){
+            var temp= i+1;
+            if(temp==100){
+                eventHandles.dispatcher("water-is-boil");
+            }
+        }
+    }
+    eventHandles.addEventListener("water-is-boil",
+            function () {
+                document.write("水开了!");
+            });
+    makeWater();
+
+
+
+
+</script>
+</body>
+</html>
