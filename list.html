@@ -16,30 +16,98 @@
 <body>
 <ul>
     <li id="editable"></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li class="editable1"></li>
+    <li class="editable1"></li>
+    <li class="editable1"></li>
 </ul>
 
 <script>
-    var flag = false;
     var editable = document.getElementById("editable");
     editable.addEventListener("click",function () {
-        if(flag){
-
-        }else{
+        var inputElement = document.getElementsByClassName("text-input");
+        if(inputElement.length===0){
             var input = document.createElement("input");
+            input.setAttribute("class","text-input");
+            input.value = editable.innerText;
+            editable.innerText = "";
             editable.appendChild(input);
-            input.addBehavior()EventListener("keyup",function (e) {
+            input.addEventListener("keyup",function (e) {
                 if(e.keyCode==13){
                     input.style.visibility = "hidden";
                     editable.innerText=input.value;
                 }
             });
-            flag = true;
-        }
 
+            input.addEventListener("blur",function () {
+                    input.style.visibility = "hidden";
+                    editable.innerText=input.value;
+            });
+            input.focus();
+        }
     })
+
+
+    var editable1 = document.getElementsByClassName("editable1");
+    editable1[0].addEventListener("click",function () {
+        var inputElement = document.getElementsByClassName("text-input");
+        if(inputElement.length===0){
+            var input = document.createElement("input");
+            input.setAttribute("class","text-input");
+            input.value = editable1[0].innerText;
+            editable1[0].innerText = "";
+            editable1[0].appendChild(input);
+            input.addEventListener("keyup",function (e) {
+                if(e.keyCode==13){
+                    input.style.visibility = "hidden";
+                    editable1[0].innerText=input.value;
+                }
+            });
+            input.focus();
+        }
+    })
+
+
+    var editable1 = document.getElementsByClassName("editable1");
+    editable1[1].addEventListener("click",function () {
+        var inputElement = document.getElementsByClassName("text-input");
+        if(inputElement.length===0){
+            var input = document.createElement("input");
+            input.setAttribute("class","text-input");
+            input.value = editable1[1].innerText;
+            editable1[1].innerText = "";
+            editable1[1].appendChild(input);
+            input.addEventListener("keyup",function (e) {
+                if(e.keyCode==13){
+                    input.style.visibility = "hidden";
+                    editable1[1].innerText=input.value;
+                }
+            });
+            input.focus();
+        }
+    })
+
+
+    var editable1 = document.getElementsByClassName("editable1");
+    editable1[2].addEventListener("click",function () {
+        var inputElement = document.getElementsByClassName("text-input");
+        if(inputElement.length===0){
+            var input = document.createElement("input");
+            input.setAttribute("class","text-input");
+            input.value = editable1[2].innerText;
+            editable1[2].innerText = "";
+            editable1[2].appendChild(input);
+            input.addEventListener("keyup",function (e) {
+                if(e.keyCode==13){
+                    input.style.visibility = "hidden";
+                    editable1[2].innerText=input.value;
+                }
+            });
+            input.focus();
+        }
+    })
+
+
+
 </script>
 </body>
 </html>

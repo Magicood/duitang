@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单操作</title>
+</head>
+<body>
+
+<form action="#">
+        <label>姓名</label>：
+        <input type="text"></br>
+        <label>年龄</label>：
+        <input type="text"></br>
+        <label>性别</label>：
+        <input type="radio" name="sex">男
+        <input type="radio" name="sex">女</br>
+        <label>爱好</label>：
+        <input type="checkbox" name="habit">1
+        <input type="checkbox" name="habit">2
+        <input type="checkbox" name="habit">3
+        <input type="checkbox" name="habit">4
+        <input type="checkbox" name="all" id="all-chose">全选
+        <input type="checkbox" name="rev" id="re-chose">反选
+
+</form>
+
+<script>
+
+    var all = document.getElementById("all-chose");
+    var rev = document.getElementById("re-chose");
+    var Name = document.getElementsByName("habit");
+    all.addEventListener("click",function () {
+        if(all.checked===true){
+            for(var i=0;i<Name.length;i++){
+                Name[i].checked=true;
+            }
+        }else {
+            for (i = 0; i < Name.length; i++) {
+                Name[i].checked=false;
+            }
+        }
+    })
+
+    rev.addEventListener("click",function () {
+        for(i=0;i<Name.length;i++) {
+            if (Name[i].checked === true) {
+                Name[i].checked=false;
+            }
+            else{
+                Name[i].checked=true;
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

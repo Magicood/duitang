@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>context-menu</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .context-menu{
+            width: 250px;
+            height: auto;
+            visibility: hidden;
+            border: 1px solid #333333;
+        }
+        .context-menu .item{
+            width:100%;
+            height:30px;
+            padding-left:10px;
+            line-height:30px;
+            border-bottom: 1px solid #000000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="context-menu">
+    <div class="item">添加收藏</div>
+    <div class="item">复制文本</div>
+    <div class="item">菜单一</div>
+    <div class="item">菜单二</div>
+    <div class="item">九分</div>
+</div>
+<script>
+    document.addEventListener('contextmenu',function (e) {
+        e.preventDefault();
+        var mX = e.clientX;
+        var mY = e.clientY;
+
+
+        var Y=window.outerHeight;
+        var X=window.outerWidth;
+        if(mX+250>X&&mY+150>Y){
+            mX=1110;
+            mY=mY-150;
+        }else if(mY+150>Y){
+            mY=mY-150;
+        }else if(mX+250>X){
+            mX=1110;
+        }
+        var container = document.querySelector(".context-menu");
+        container.style.visibility="visible";
+        container.style.transform="translate("+mX+"px,"+mY+"px)";//2d转换定位
+
+//        container.style.position="absolute";
+//        container.style.top=mY+"px";
+//        container.style.left=mX+"px";     //绝对定位
+    });
+    document.addEventListener('click',function () {
+        var container = document.querySelector(".context-menu");
+        container.style.visibility = "hidden";
+    })
+</script>
+</body>
+</html>
