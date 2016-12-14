@@ -31,6 +31,21 @@
 </div>
 
 <script>
+    function listen(selector,eventString,fn) {
+//        var eventListen;
+//        var event;
+        if(selector.attachEvent){
+            selector.attachEvent("on" + eventString,fn);
+//            eventListen = selector.attachEvent;
+//            event = "on" + eventString;
+        }else if(selector.addEventListener){
+            selector.addEventListener(eventString,fn);
+//            eventListen = selector.addEventListener;
+//            event = eventString;
+        }
+//            eventListen(selector,event,fn);
+    }
+
     var base= document.querySelector(".base");
     var grandSon= document.querySelector(".grand-son");
     var child= document.querySelector(".child");
