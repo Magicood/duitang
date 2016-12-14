@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse</title>
+    <style>
+        #container{
+            width:600px;
+            height: 400px;
+            background-color: #1B5AC5;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+
+</div>
+<script>
+    function listen(selector,event,fn) {
+        var ele = document.querySelector(selector);
+        ele.addEventListener(event,fn);
+    }
+
+    listen("#container","mouseenter",function (e) {
+        var oSetX =e.offsetX;
+        var oSetY =e.offsetY;
+//        alert(oSetX);
+//        alert(oSetY);
+    });
+    listen("#container","dblclick",function () {
+        alert("doubleClick");
+    });
+
+//    listen("#container","mouseleave",function () {
+//        alert("mouseLeave");
+//    });
+//    listen("#container","mouseover",function () {
+//        alert("mouseOver");
+//    });
+//    listen("#container","mouseout",function () {
+//        alert("mouseOut");
+//    });
+//    listen("#container","mousedown",function () {
+//        arguments[0].currentTarget.style.backgroundColor="black";
+//    });
+//    listen("#container","mouseup",function () {
+//        arguments[0].currentTarget.style.backgroundColor="red";
+//    });
+    listen("#container","mousemove",function (e) {
+        document.getElementById("container").innerText=e.pageX+""+e.pageY;
+    });
+
+
+</script>
+</body>
+</html>
