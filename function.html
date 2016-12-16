@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量作用域</title>
+</head>
+<body>
+<script>
+
+    var name = "全局变量 name";
+    function invokeWay() {
+        this.newTitle = "new-title";
+        document.write("<br>");
+        document.write("直接调用函数输出" + this.name);
+        document.write("<br>");
+        document.write("指定this调用的参数" + arguments[0]);
+
+    }
+    invokeWay();
+
+    var obj = {
+      name:"obj name",
+        fn:invokeWay
+    };
+    obj.fn();
+
+    var objFun = obj.fn;
+    objFun();
+
+    //指定this调用函数
+    var thisObj = {
+
+        name:"this-obj"
+    };
+    //1
+    invokeWay.apply(thisObj,[1,2,3]);
+    //2
+    invokeWay.call(thisObj,1,2,3);
+    //3
+    var Bind = invokeWay.bind(thisObj,["this is bind"]);
+    Bind();
+
+    //new关键字调用函数
+    var generation = new invokeWay("new 关键字");
+    document.write("<br>");
+    document.write("指定this调用的参数" + generation.newTitle);
+</script>
+</body>
+</html>
