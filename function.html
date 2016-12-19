@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-
+//默认调用
     var name = "全局变量 name";
     function invokeWay() {
         this.newTitle = "new-title";
@@ -17,7 +17,7 @@
 
     }
     invokeWay();
-
+//隐式转换调用(方法调用)
     var obj = {
       name:"obj name",
         fn:invokeWay
@@ -40,7 +40,11 @@
     var Bind = invokeWay.bind(thisObj,["this is bind"]);
     Bind();
 
-    //new关键字调用函数
+    //new关键字调用函数：作用
+    //创建一个新对象
+    //替换原函数this
+    //访问函数原型
+    //赋值给创建的对象
     var generation = new invokeWay("new 关键字");
     document.write("<br>");
     document.write("指定this调用的参数" + generation.newTitle);
