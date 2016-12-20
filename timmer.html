@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>时钟</title>
+    <style>
+        #outputContainer{
+            font-family: 微软雅黑;
+            color: #A66800;
+            font-size: 20px;
+        }
+        #countDown{
+            font-family: 微软雅黑;
+            color: #A66800;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
 <div id="outputContainer"></div>
@@ -44,9 +56,9 @@
         var hours2 = Math.floor(hours);
         var hMiniSecond = hours2*60*60*1000;
         var mMiniSecond = hourMiniSecond-hMiniSecond;
-        var minuteMiniSecond = mMiniSecond/1000/60;
-        var minuteMiniSecond2 = Math.floor(minuteMiniSecond);
-        var mrMiniSecond = minuteMiniSecond2*60*1000;
+        var minute = mMiniSecond/1000/60;
+        var minute2 = Math.floor(minute);
+        var mrMiniSecond = minute2*60*1000;
         var secondMini = mMiniSecond - mrMiniSecond;
         var second = secondMini/1000;
         var second2 = Math.floor(second);
@@ -54,7 +66,7 @@
         var miniSecond2 = secondMini - secondMiniSe;
         ele.innerText = "距离春节还有："+date2+"天"
                 +hours2+"时"
-                +minuteMiniSecond2+"分"
+                +minute2+"分"
                 +second2+"秒"
                 +miniSecond2+"毫秒";
 
