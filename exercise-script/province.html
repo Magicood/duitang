@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地域查询</title>
+</head>
+<body>
+<div>
+    <label for="province">省</label>
+    <select name="province" id="province"></select>
+    <label for="city">市</label>
+    <select name="city" id="city"></select>
+    <label for="district">县（区）</label>
+    <select name="district" id="district"></select>
+</div>
+<script type="text/javascript" src="province.js"></script>
+
+<script>
+    var province = document.querySelector("#province");
+    var provinces = window.util.provinces;
+    var op = document.createElement("option");
+    provinces.forEach(function(e) {
+        op = document.createElement("option");
+        op.text = e.name;
+        op.value = e.ProID;
+        province.appendChild(op);
+
+
+    });
+    var city = document.querySelector("#city");
+    var cities = window.util.cities;
+    province.addEventListener("change",function (e) {
+        city.options.length=0;
+        var pId = e.currentTarget;
+        cities.forEach(function(e) {
+            if (pId.value==e.ProID) {
+                op = document.createElement("option");
+                op.text = e.name;
+                op.value = e.ProID;
+                city.appendChild(op);
+            }
+        });
+    });
+        cities.forEach(function(e) {
+            if(e.ProID==1) {
+                op = document.createElement("option");
+                op.text = e.name;
+                op.value = e.CityID;
+                city.appendChild(op);
+            }
+
+    });
+
+    var district = document.querySelector("#district");
+    var districts = window.util.districts;
+        districts.forEach(function(e) {
+        op = document.createElement("option");
+        op.text = e.DisName;
+        district.appendChild(op);
+    });
+
+</script>
+</body>
+</html>
