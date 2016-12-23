@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            background-color: #1B5AC5;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*transition: height 0.1s;*/
+        }
+        .container>div{
+            width:6px;
+            height: 6px;
+            background-color: #000;
+            position: absolute;
+        }
+        .container>div:nth-child(1){
+            top:0;
+            left:0;
+        }
+        .container>div:nth-child(2){
+            top:0;
+            left:50%;
+        }
+        .container>div:nth-child(3){
+            top:0;
+            left:100%;
+        }
+        .container>div:nth-child(4){
+            top:50%;
+            left:0;
+        }
+        .container>div:nth-child(5){
+            top:50%;
+            left:100%;
+        }
+        .container>div:nth-child(6){
+            top:100%;
+            left:0;
+        }
+        .container>div:nth-child(7){
+            top:100%;
+            left:50%;
+        }
+        .container>div:nth-child(8){
+            top:100%;
+            left:100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="inner1"></div>
+    <div class="inner2"></div>
+    <div class="inner3"></div>
+    <div class="inner4"></div>
+    <div class="inner5"></div>
+    <div class="inner6"></div>
+    <div class="inner7"></div>
+    <div class="inner8"></div>
+</div>
+<script>
+
+    //    document.addEventListener("mousemove",function (e) {
+    //        var source = e.target;
+    //        var current = e.currentTarget;
+    //        var elementClass = source.getAttribute("class");
+    //        if(elementClass==="container"){
+    //
+    //        }
+    //    });
+    var container = document.querySelector(".container");
+    var inner1 = document.querySelector(".inner1");
+    var inner2 = document.querySelector(".inner2");
+    var inner3 = document.querySelector(".inner3");
+    var inner4 = document.querySelector(".inner4");
+    var inner5 = document.querySelector(".inner5");
+    var inner6 = document.querySelector(".inner6");
+    var inner7 = document.querySelector(".inner7");
+    var inner8 = document.querySelector(".inner8");
+    var MouseX;
+    var MouseY;
+    var flag1=false;
+    var flag2=false;
+    var flag3=false;
+    var tempX;
+    var tempY;
+    var proX;
+    var proY;
+
+    inner7.addEventListener("mousedown",function (e) {
+        e.preventDefault();
+        flag1 = true;
+
+    });
+    document.addEventListener("mouseup",
+            function () {
+                flag1 = false;
+                flag2 = false;
+                flag3 = false;
+            });
+
+    inner5.addEventListener("mousedown",function (e) {
+        e.preventDefault();
+        flag2 = true;
+    });
+
+    inner8.addEventListener("mousedown",function (e) {
+        e.preventDefault();
+        flag3 = true;
+    });
+    document.addEventListener("mousemove",
+            function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+               tempX=e.pageX-proX;
+                tempY =e.pageY-proY;
+                var height = container.clientHeight;
+                var width = container.clientWidth;
+                    if(flag3){
+                        container.style.width=width + tempX+"px";
+                        container.style.height=height + tempY+"px";
+                    }
+                    else if(flag1){
+                        container.style.height=height + tempY+"px";
+                    }
+                    else if(flag2){
+                        container.style.width=width + tempX+"px";
+                    }
+                proX = e.pageX;
+                proY = e.pageY;
+            });
+    </script>

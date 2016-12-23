@@ -1,0 +1,15 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+*{
+
+    box-sizing:border-box;
+}
+.container{
+    width: 300px;
+    height:300px;
+    border: 2px solid #000;
+    background-color: #1B5AC5;
+}

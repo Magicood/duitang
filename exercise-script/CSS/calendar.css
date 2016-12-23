@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+/**{*/
+    /*box-sizing: border-box;*/
+/*}*/
+.container.calendar{
+    height: 300px;
+    width: 238px;
+    color: white;
+    background-color: green;
+    font-family: 微软雅黑;
+}
+.container.calendar>div{
+    display: flex;
+    flex-wrap: wrap;
+    /*align-content:space-between;*/
+
+    /*justify-content: space-between;*/
+}
+
+.container.calendar .date-container{
+    flex-grow: 10;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 2px solid rgba(0,0,0,0);
+
+}
+.container.calendar .date-container:hover{
+    border: 2px solid rgba(255,255,255,0.5);
+}
+.container.calendar .date-container.next{
+    color: #A0A0A0;
+}
+.container.calendar .day{
+    background-color: #1B5AC5;
+    border:2px solid #0B84DA;
+}
+.top,.down{
+    font-size: 20px;
+    width: 20px;
+    height: 30px;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+.tool-bar{
+    justify-content: flex-end;
+}
